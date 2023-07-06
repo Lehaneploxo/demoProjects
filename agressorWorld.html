@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<body>
+
+    <script>
+        alert('Привет')
+        alert('Добро пожаловать в одномерный мир объектов! Их мир - это массив ! Мир ограничен количеством мест, поэтому более сильные объекты убивают слабых')
+
+const randomNum = (maxNum) => Math.floor(Math.random() * maxNum)
+
+const name = ['Roto', 'Miti', 'Livo', 'Stiv', 'Ario', 'Hito', 'Fito', 'Dilo', 'Siso', 'Rest', 'Agip', 'Vovo', 'Slim', 'Xoze', 'Niny', 'Kilp', 'Ziza', 'Zizy', 'Dedo', 'Drin', 'Sopl', 'Sava', 'Lexi', 'Leha', 'Lexa', 'Pavl', 'Kati', 'Vira', 'Loci']
+
+const world = []
+
+function someName(arr) {
+    let rand = Math.floor(Math.random() * arr.length);
+    return arr[rand];
+}
+
+const randomBot = (name, power) => {
+    return {name, power}
+}
+const k = prompt('укажите интервал рождения в милисекундах')
+const j = prompt('укажите максимальное число жителей')
+
+function live () {
+    world.push(randomBot(someName(name),randomNum(100)))
+    world.length > j ? world.sort((firstObj, secondObj) => firstObj.power - secondObj.power).shift() : world 
+    return document.write(`<p><font color="green">${JSON.stringify(world)}</font></p>`)
+  } 
+ 
+   setInterval(live,k)
+ 
+    </script>
+</body>
+</html>

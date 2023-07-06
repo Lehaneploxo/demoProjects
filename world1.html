@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World1</title>
+</head>
+<body>
+
+
+
+
+
+
+    <script>
+
+alert('Welcome to WORLD1 !!!')
+alert('In this world, 5 objects with random parameters are born! HEALTH from 1 to 5 ! and POWER from 1 to 5 ! At the end there will be only one!')
+
+
+        const cabName = ['SCIM', 'LIMI', 'RUIL', 'FIVO', 'MINO', 'TOTI', 'JIPO', 'YUPO', 'RETY', 'REDU', 'POLI', 'TERU', 'FEDI']
+
+function arrayRandElement(arr) {
+    var rand = Math.floor(Math.random() * arr.length);
+    return arr[rand];
+}
+
+//2
+const health0 = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+  const health1 = health0(1, 5)
+  const health2 = health0(1, 5)
+  const health3 = health0(1, 5)
+  const health4 = health0(1, 5)
+  const health5 = health0(1, 5)
+
+//3
+const power0 = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const power1 = power0(1, 5)
+  const power2 = power0(1, 5)
+  const power3 = power0(1, 5)
+  const power4 = power0(1, 5)
+  const power5 = power0(1, 5)
+
+//entity
+const entityCab = {
+    name:arrayRandElement(cabName),
+    health: health1,
+    power: power1
+}
+
+
+
+  alert('come into the world - ' + entityCab.name)
+ 
+
+
+
+const entityCab2 = {
+    name:arrayRandElement(cabName),
+    health: health2,
+    power: power2
+}
+
+
+    alert('come into the world - ' + entityCab2.name)
+ 
+
+const entityCab3 = {
+    name:arrayRandElement(cabName),
+    health: health3,
+    power: power3
+}
+
+
+    alert('come into the world - ' + entityCab3.name)
+  
+
+const entityCab4 = {
+    name:arrayRandElement(cabName),
+    health: health4,
+    power: power4
+}
+
+
+    alert('come into the world - ' + entityCab4.name)
+  
+
+const entityCab5 = {
+    name:arrayRandElement(cabName),
+    health: health5,
+    power: power5
+}
+
+
+    alert('come into the world - ' + entityCab5.name)
+  
+
+  
+    alert('the great battle has begun')
+  
+
+
+  
+    alert('king of this world')
+
+
+// only one will remain
+
+
+   entityCab.result = entityCab.power + entityCab.health
+   entityCab2.result = entityCab2.power + entityCab2.health
+   entityCab3.result = entityCab3.power + entityCab3.health
+   entityCab4.result = entityCab4.power + entityCab4.health
+   entityCab5.result = entityCab5.power + entityCab5.health
+   
+  function winner() {
+  if (entityCab.result > entityCab2.result && entityCab.result > entityCab3.result && entityCab.result > entityCab4.result && entityCab.result > entityCab5.result) {
+    alert(entityCab.name) 
+  } else if (entityCab2.result > entityCab.result && entityCab2.result > entityCab3.result && entityCab2.result > entityCab4.result && entityCab2.result > entityCab5.result) {
+    alert(entityCab2.name) 
+  } else if (entityCab3.result > entityCab2.result && entityCab3.result > entityCab.result && entityCab3.result > entityCab4.result && entityCab3.result > entityCab5.result) {
+    alert(entityCab3.name) 
+  } else if (entityCab4.result > entityCab2.result && entityCab4.result > entityCab3.result && entityCab4.result > entityCab.result && entityCab4.result > entityCab5.result) {
+    alert(entityCab4.name)
+  } else if (entityCab5.result > entityCab2.result && entityCab5.result > entityCab3.result && entityCab5.result > entityCab4.result && entityCab5.result > entityCab.result) {
+    alert(entityCab5.name) 
+  } else {
+    alert('everyone died') 
+  }
+}
+
+
+    winner()
+    
+  
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World 2</title>
+</head>
+<body>
+
+    <script>
+
+const world2 = []
+const name = ['Roto', 'Miti', 'Livo', 'Stiv', 'Ario', 'Hito', 'Fito', 'Dilo', 'Siso', 'Rest', 'Agip', 'Vovo', 'Slim', 'Xoze', 'Niny', 'Kilp', 'Ziza', 'Zizy', 'Dedo', 'Drin', 'Sopl', 'Sava', 'Lexi', 'Leha', 'Lexa', 'Pavl', 'Kati', 'Vira', 'Loci']
+
+function someName(arr) {
+    let rand = Math.floor(Math.random() * arr.length);
+    return arr[rand];
+}
+
+function someHealthOrPower(min, max) {
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+  }
+
+
+function someMen(arr, j) {
+    function man1() {
+        const man = 
+    {
+        name: someName(name),
+        health: someHealthOrPower(1, 100),
+        power: someHealthOrPower(1, 100),
+    }
+
+       man.wars = man.health + man.power
+
+    return man
+    
+    }
+    
+    for ( let i = 0;  i < j ; i++) {
+         arr.push(man1())
+    }
+    return arr
+
+}
+alert('Добро пожаловать в мир 2 !')
+alert('Каждый рожденный боец являеться обьектом! Их мир это массив! при рождении у них есть рандомное имя! Tакже параметры здоровья от 1 до 100 ! Умение драться от 1 до 100!')
+alert('Tут ты сам выбираешь сколько живых обьектов создать!')
+alert('В конце останеться только один!')
+j = prompt('Cколько бойцов создать?','')
+
+const a = someMen(world2,j)
+
+
+
+
+
+const mmm = a.map(warrior => warrior.name)
+alert('Tолько что родились :' + mmm)
+
+const listOfWars = a.map(warrior => warrior.wars)
+
+
+const maxWar = Math.max(...listOfWars)
+alert('Битва началась')
+alert('И победителем становиться...')
+
+
+const result = a.find(warrior => warrior.wars === maxWar)
+
+const z = result.name
+alert(z)
+
+
+    </script>
+</body>
+</html>

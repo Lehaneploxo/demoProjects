@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Robot</title>
+    
+</head>
+<body>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center><h1> Онлайн Робот</h1></center>
+     <br>
+    <center><button class="a1">Привет!</button></center>
+     <br>
+    <center><button class="a3">Идти</button></center>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <center><button class="a2">Зарядка</button></center>
+     <br>
+    <center><button class="a4">Остаток заряда</button></center>
+
+
+    <script>
+        const robot = {
+    energyAmount: 0,
+}
+ 
+
+ const button = document.querySelector('.a1')  
+ button.addEventListener('click', () => {
+    if (robot.energyAmount >= 1) {
+        robot.energyAmount -= 1
+        alert('Привет меня зовут Робот')
+        alert('Израсходовали 1% энергии')
+    } else {
+        alert('Нет заряда!')
+    }
+ })
+
+
+ const button2 = document.querySelector('.a2')
+ button2.addEventListener('click',  () => {
+    robot.energyAmount += 1
+    alert('+ 1% зарядки')
+ } )
+
+
+ const button3 = document.querySelector('.a3')
+ button3.addEventListener('click', () => {
+    if (robot.energyAmount >= 1) {
+        robot.energyAmount -= 1
+        alert('Pобот идет')
+        alert('Израсходовали 1% энергии')
+    } else {
+        alert('Нет заряда!')
+    }
+ } )
+
+
+ const button4 = document.querySelector('.a4')
+ button4.addEventListener('click', () => {
+    alert(robot.energyAmount)
+ })
+    </script>
+    
+</body>
+</html>
